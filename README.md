@@ -21,6 +21,11 @@ into a binary stream. Boost Regex and Boost Date_Time are also used just for goo
 
 ## Commands to compile, link, and run the program
 
+```
+git clone --depth 1 https://github.com/MariuszJozef/CMakeLinkBoostStaticShared.git
+cd CMakeLinkBoostStaticShared
+```
+
 It is assumed that both shared and static Boost libraries have been installed. To link
 Boost dynamically (as shared libraries), the flag
 `-D Boost_USE_STATIC_LIBS=OFF` needs to be provided at the CMake configure step. (On Windows, boost_serialization-*.dll and others will be copied by CMake next to the executable).
