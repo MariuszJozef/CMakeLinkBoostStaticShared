@@ -1,0 +1,43 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 26,
+        "patch": 3
+    },
+    "include": [
+        "Platforms.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "Msvc",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "inherits": "windowsYes"
+        },
+        {
+            "name": "Clang",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            },
+            "inherits": "windowsNo"
+        },
+        {
+            "name": "Gnu",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            },
+            "inherits": "windowsNo"
+        }
+    ],
+    "buildPresets": [
+
+    ]
+}

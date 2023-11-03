@@ -1,0 +1,88 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "LinkBoostAsStaticOrShared (Debug) Windows",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "windows": {
+                // Adjust the path to the Debug executable (rebuild before debugging!)
+                "program": "${workspaceFolder}/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+/*
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildMake/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildMake/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNMake/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinja/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinja/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinja/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildVS/x32/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+                "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildVS/x64/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d.exe"
+*/
+            },
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "LinkBoostAsStaticOrShared (Debug) Linux/Mac",
+            "type": "cppdbg",
+            "request": "launch",
+            // Adjust the path to the Debug executable (rebuild before debugging!)
+            "linux": {
+                "program": "${workspaceFolder}/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d"
+            },
+            "osx": {
+                "program": "${workspaceFolder}/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d"
+            },
+/*
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildMake/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildMake/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNMake/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinja/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinja/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinja/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Gnu/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Clang/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildNinjaMC/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildVS/x32/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+            "program": "${workspaceFolder}/Cpp/Demo/LinkBoostAsStaticOrShared/buildVS/x64/Msvc/buildOut/LinkBoostAsStaticOrShared/bin/Debug/LinkBoostAsStaticOrShared_d",
+*/
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

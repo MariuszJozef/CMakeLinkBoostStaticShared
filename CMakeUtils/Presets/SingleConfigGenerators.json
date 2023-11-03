@@ -1,0 +1,64 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 26,
+        "patch": 3
+    },
+    "include": [
+        "Compilers.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "Ninja-Msvc",
+            "hidden": true,
+            "generator": "Ninja",
+            "inherits": "Msvc",
+            "binaryDir": "buildNinja/Msvc",
+            "installDir": "buildNinja/Msvc/install"
+        },
+        {
+            "name": "Ninja-Clang",
+            "hidden": true,
+            "generator": "Ninja",
+            "inherits": "Clang",
+            "binaryDir": "buildNinja/Clang",
+            "installDir": "buildNinja/Clang/install"
+        },
+        {
+            "name": "Ninja-Gnu",
+            "hidden": true,
+            "generator": "Ninja",
+            "inherits": "Gnu",
+            "binaryDir": "buildNinja/Gnu",
+            "installDir": "buildNinja/Gnu/install"
+        },
+        {
+            "name": "NMake-Msvc",
+            "hidden": true,
+            "generator": "NMake Makefiles",
+            "inherits": "Msvc",
+            "binaryDir": "buildNMake/Msvc",
+            "installDir": "buildNMake/Msvc/install"
+        },
+        {
+            "name": "Make-Clang",
+            "hidden": true,
+            "generator": "Unix Makefiles",
+            "inherits": "Clang",
+            "binaryDir": "buildMake/Clang",
+            "installDir": "buildMake/Clang/install"
+        },
+        {
+            "name": "Make-Gnu",
+            "hidden": true,
+            "generator": "Unix Makefiles",
+            "inherits": "Gnu",
+            "binaryDir": "buildMake/Gnu",
+            "installDir": "buildMake/Gnu/install"
+        }
+    ],
+    "buildPresets": [
+
+    ]
+}

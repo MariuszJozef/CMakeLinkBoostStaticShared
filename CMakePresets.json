@@ -1,0 +1,511 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 26,
+        "patch": 3
+    },
+    "include": [
+        "CMakeUtils/Presets/SingleConfigGenerators.json",
+        "CMakeUtils/Presets/BuildType.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "architecture": "x64"
+        },
+        {
+            "name": "uncommon",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_COMPILE_WARNING_AS_ERROR": true
+            }
+        },
+        {
+            "name": "Ninja-Msvc-Debug",
+            "inherits": ["Ninja-Msvc", "singleConfigDebug"]
+        },
+        {
+            "name": "Ninja-Msvc-Release",
+            "inherits": ["Ninja-Msvc", "singleConfigRelease"]
+        },
+        {
+            "name": "Ninja-Msvc-RelWithDebInfo",
+            "inherits": ["Ninja-Msvc", "singleConfigRelWithDebInfo"]
+        },
+        {
+            "name": "Ninja-Msvc-MinSizeRel",
+            "inherits": ["Ninja-Msvc", "singleConfigMinSizeRel"]
+        },
+        {
+            "name": "Ninja-Clang-Debug",
+            "inherits": ["Ninja-Clang", "singleConfigDebug"]
+        },
+        {
+            "name": "Ninja-Clang-Release",
+            "inherits": ["Ninja-Clang", "singleConfigRelease"]
+        },
+        {
+            "name": "Ninja-Clang-RelWithDebInfo",
+            "inherits": ["Ninja-Clang", "singleConfigRelWithDebInfo"]
+        },
+        {
+            "name": "Ninja-Clang-MinSizeRel",
+            "inherits": ["Ninja-Clang", "singleConfigMinSizeRel"]
+        },
+        {
+            "name": "Ninja-Gnu-Debug",
+            "inherits": ["Ninja-Gnu", "singleConfigDebug"]
+        },
+        {
+            "name": "Ninja-Gnu-Release",
+            "inherits": ["Ninja-Gnu", "singleConfigRelease"]
+        },
+        {
+            "name": "Ninja-Gnu-RelWithDebInfo",
+            "inherits": ["Ninja-Gnu", "singleConfigRelWithDebInfo"]
+        },
+        {
+            "name": "Ninja-Gnu-MinSizeRel",
+            "inherits": ["Ninja-Gnu", "singleConfigMinSizeRel"]
+        },
+        {
+            "name": "NinjaMC-Msvc",
+            "generator": "Ninja Multi-Config",
+            "inherits": "Msvc",
+            "binaryDir": "buildNinjaMC/Msvc",
+            "installDir": "buildNinjaMC/Msvc/install"
+        },
+        {
+            "name": "NinjaMC-Clang",
+            "generator": "Ninja Multi-Config",
+            "inherits": "Clang",
+            "binaryDir": "buildNinjaMC/Clang",
+            "installDir": "buildNinjaMC/Clang/install"
+        },
+        {
+            "name": "NinjaMC-Gnu",
+            "generator": "Ninja Multi-Config",
+            "inherits": "Gnu",
+            "binaryDir": "buildNinjaMC/Gnu",
+            "installDir": "buildNinjaMC/Gnu/install"
+        },
+        {
+            "name": "NMake-Msvc-Debug",
+            "inherits": ["NMake-Msvc", "singleConfigDebug"]
+        },
+        {
+            "name": "NMake-Msvc-Release",
+            "inherits": ["NMake-Msvc", "singleConfigRelease"]
+        },
+        {
+            "name": "NMake-Msvc-RelWithDebInfo",
+            "inherits": ["NMake-Msvc", "singleConfigRelWithDebInfo"]
+        },
+        {
+            "name": "NMake-Msvc-MinSizeRel",
+            "inherits": ["NMake-Msvc", "singleConfigMinSizeRel"]
+        },
+        {
+            "name": "Make-Clang-Debug",
+            "inherits": ["Make-Clang", "singleConfigDebug"]
+        },
+        {
+            "name": "Make-Clang-Release",
+            "inherits": ["Make-Clang", "singleConfigRelease"]
+        },
+        {
+            "name": "Make-Clang-RelWithDebInfo",
+            "inherits": ["Make-Clang", "singleConfigRelWithDebInfo"]
+        },
+        {
+            "name": "Make-Clang-MinSizeRel",
+            "inherits": ["Make-Clang", "singleConfigMinSizeRel"]
+        },
+        {
+            "name": "Make-Gnu-Debug",
+            "inherits": ["Make-Gnu", "singleConfigDebug"]
+        },
+        {
+            "name": "Make-Gnu-Release",
+            "inherits": ["Make-Gnu", "singleConfigRelease"]
+        },
+        {
+            "name": "Make-Gnu-RelWithDebInfo",
+            "inherits": ["Make-Gnu", "singleConfigRelWithDebInfo"]
+        },
+        {
+            "name": "Make-Gnu-MinSizeRel",
+            "inherits": ["Make-Gnu", "singleConfigMinSizeRel"]
+        },
+        {
+            "name": "VSx32-Msvc",
+            "description": "Visual Studio 32 bit",
+            "generator": "Visual Studio 17 2022",
+            "architecture": "win32",
+            "inherits": "Msvc",
+            "binaryDir": "buildVS/x32/Msvc",
+            "installDir": "buildVS/x32/Msvc/install"
+        },
+        {
+            "name": "VSx64-Msvc",
+            "description": "Visual Studio 64 bit",
+            "generator": "Visual Studio 17 2022",
+            "architecture": "x64",
+            "inherits": "Msvc",
+            "binaryDir": "buildVS/x64/Msvc",
+            "installDir": "buildVS/x64/Msvc/install"
+        },
+        {
+            "name": "Xcode-Clang",
+            "generator": "Xcode",
+            "inherits": "Clang",
+            "binaryDir": "buildXcode/Clang",
+            "installDir": "buildXcode/Clang/install"
+        },
+        {
+            "name": "Xcode-Gnu",
+            "generator": "Xcode",
+            "inherits": "Gnu",
+            "binaryDir": "buildXcode/Gnu",
+            "installDir": "buildXcode/Gnu/install"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "verbose": false,
+            "jobs": 4
+        },
+        {
+            "name": "Ninja-Msvc-Debug",
+            "configurePreset": "Ninja-Msvc-Debug",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "Ninja-Msvc-Release",
+            "configurePreset": "Ninja-Msvc-Release",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "Ninja-Msvc-RelWithDebInfo",
+            "configurePreset": "Ninja-Msvc-RelWithDebInfo",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "Ninja-Msvc-MinSizeRel",
+            "configurePreset": "Ninja-Msvc-MinSizeRel",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "Ninja-Clang-Debug",
+            "configurePreset": "Ninja-Clang-Debug",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Clang-Release",
+            "configurePreset": "Ninja-Clang-Release",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Clang-RelWithDebInfo",
+            "configurePreset": "Ninja-Clang-RelWithDebInfo",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Clang-MinSizeRel",
+            "configurePreset": "Ninja-Clang-MinSizeRel",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Gnu-Debug",
+            "configurePreset": "Ninja-Gnu-Debug",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Gnu-Release",
+            "configurePreset": "Ninja-Gnu-Release",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Gnu-RelWithDebInfo",
+            "configurePreset": "Ninja-Gnu-RelWithDebInfo",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Ninja-Gnu-MinSizeRel",
+            "configurePreset": "Ninja-Gnu-MinSizeRel",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "NinjaMC-Msvc",
+            "configurePreset": "NinjaMC-Msvc",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "NinjaMC-Clang",
+            "configurePreset": "NinjaMC-Clang",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "NinjaMC-Gnu",
+            "configurePreset": "NinjaMC-Gnu",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "NMake-Msvc-Debug",
+            "configurePreset": "NMake-Msvc-Debug",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "NMake-Msvc-Release",
+            "configurePreset": "NMake-Msvc-Release",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "NMake-Msvc-RelWithDebInfo",
+            "configurePreset": "NMake-Msvc-RelWithDebInfo",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "NMake-Msvc-MinSizeRel",
+            "configurePreset": "NMake-Msvc-MinSizeRel",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "Make-Clang-Debug",
+            "configurePreset": "Make-Clang-Debug",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Clang-Release",
+            "configurePreset": "Make-Clang-Release",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Clang-RelWithDebInfo",
+            "configurePreset": "Make-Clang-RelWithDebInfo",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Clang-MinSizeRel",
+            "configurePreset": "Make-Clang-MinSizeRel",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Gnu-Debug",
+            "configurePreset": "Make-Gnu-Debug",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Gnu-Release",
+            "configurePreset": "Make-Gnu-Release",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Gnu-RelWithDebInfo",
+            "configurePreset": "Make-Gnu-RelWithDebInfo",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "Make-Gnu-MinSizeRel",
+            "configurePreset": "Make-Gnu-MinSizeRel",
+            "inherits": ["common", "windowsNo"]
+        },
+        {
+            "name": "VSx32-Msvc",
+            "description": "Visual Studio 32 bit",
+            "configurePreset": "VSx32-Msvc",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "VSx64-Msvc",
+            "description": "Visual Studio 64 bit",
+            "configurePreset": "VSx64-Msvc",
+            "inherits": ["common", "windowsYes"]
+        },
+        {
+            "name": "Xcode-Clang",
+            "configurePreset": "Xcode-Clang",
+            "inherits": ["common", "macYes"]
+        },
+        {
+            "name": "Xcode-Gnu",
+            "configurePreset": "Xcode-Gnu",
+            "inherits": ["common", "macYes"]
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error", 
+                "stopOnFailure": true,
+                "jobs": 4
+            }
+        },
+        {
+            "name": "Ninja-Msvc-Debug",
+            "configurePreset": "Ninja-Msvc-Debug",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Msvc-Release",
+            "configurePreset": "Ninja-Msvc-Release",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Msvc-RelWithDebInfo",
+            "configurePreset": "Ninja-Msvc-RelWithDebInfo",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Msvc-MinSizeRel",
+            "configurePreset": "Ninja-Msvc-MinSizeRel",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Clang-Debug",
+            "configurePreset": "Ninja-Clang-Debug",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Clang-Release",
+            "configurePreset": "Ninja-Clang-Release",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Clang-RelWithDebInfo",
+            "configurePreset": "Ninja-Clang-RelWithDebInfo",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Clang-MinSizeRel",
+            "configurePreset": "Ninja-Clang-MinSizeRel",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Gnu-Debug",
+            "configurePreset": "Ninja-Gnu-Debug",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Gnu-Release",
+            "configurePreset": "Ninja-Gnu-Release",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Gnu-RelWithDebInfo",
+            "configurePreset": "Ninja-Gnu-RelWithDebInfo",
+            "inherits": "common"
+        },
+        {
+            "name": "Ninja-Gnu-MinSizeRel",
+            "configurePreset": "Ninja-Gnu-MinSizeRel",
+            "inherits": "common"
+        },
+        {
+            "name": "NinjaMC-Msvc",
+            "configurePreset": "NinjaMC-Msvc",
+            "inherits": "common"
+        },
+        {
+            "name": "NinjaMC-Clang",
+            "configurePreset": "NinjaMC-Clang",
+            "inherits": "common"
+        },
+        {
+            "name": "NinjaMC-Gnu",
+            "configurePreset": "NinjaMC-Gnu",
+            "inherits": "common"
+        },
+        {
+            "name": "NMake-Msvc-Debug",
+            "configurePreset": "NMake-Msvc-Debug",
+            "inherits": "common"
+        },
+        {
+            "name": "NMake-Msvc-Release",
+            "configurePreset": "NMake-Msvc-Release",
+            "inherits": "common"
+        },
+        {
+            "name": "NMake-Msvc-RelWithDebInfo",
+            "configurePreset": "NMake-Msvc-RelWithDebInfo",
+            "inherits": "common"
+        },
+        {
+            "name": "NMake-Msvc-MinSizeRel",
+            "configurePreset": "NMake-Msvc-MinSizeRel",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Clang-Debug",
+            "configurePreset": "Make-Clang-Debug",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Clang-Release",
+            "configurePreset": "Make-Clang-Release",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Clang-RelWithDebInfo",
+            "configurePreset": "Make-Clang-RelWithDebInfo",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Clang-MinSizeRel",
+            "configurePreset": "Make-Clang-MinSizeRel",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Gnu-Debug",
+            "configurePreset": "Make-Gnu-Debug",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Gnu-Release",
+            "configurePreset": "Make-Gnu-Release",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Gnu-RelWithDebInfo",
+            "configurePreset": "Make-Gnu-RelWithDebInfo",
+            "inherits": "common"
+        },
+        {
+            "name": "Make-Gnu-MinSizeRel",
+            "configurePreset": "Make-Gnu-MinSizeRel",
+            "inherits": "common"
+        },
+        {
+            "name": "VSx32-Msvc",
+            "description": "Visual Studio 32 bit",
+            "configurePreset": "VSx32-Msvc",
+            "inherits": "common"
+        },
+        {
+            "name": "VSx64-Msvc",
+            "description": "Visual Studio 64 bit",
+            "configurePreset": "VSx64-Msvc",
+            "inherits": "common"
+        },
+        {
+            "name": "Xcode-Clang",
+            "configurePreset": "Xcode-Clang",
+            "inherits": "common"
+        },
+        {
+            "name": "Xcode-Gnu",
+            "configurePreset": "Xcode-Gnu",
+            "inherits": "common"
+        }                
+    ]
+}
